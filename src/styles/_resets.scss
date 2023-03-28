@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: lato, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+/* The flexContainer is a mixin that receive as first parameter the direction   value and as second parameter the justify parameter */
+@mixin flexContainer($direction, $justify, $align) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
+@mixin fontSettings($family, $size, $wight, $style) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: weight($wight);
+    font-style: $style;
+}
+
+// Responsive container
+@mixin responsiveContainer() {
+    max-width: 1400px;
+    margin: 0 auto;
+}

@@ -1,0 +1,210 @@
+@import './variables';
+@import './resets';
+
+// NAVIGATION BAR SECTION
+.navbar {
+    background: linear-gradient(90deg, $black 0%, $background 25%);
+    box-shadow: 0px 4px 9px $black;
+    color: $text-color;
+    padding: 7px 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar--container {
+    @include flexContainer(row, space-between, center);
+    @include responsiveContainer();
+}
+
+.navbar--header {
+    @include fontSettings('Cinzel', 1.2em, bold, italic);
+    @include flexContainer(row, center, center);
+    color: $text-color2;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: $silver 1px 0 10px;
+}
+
+.letter--style {
+    @include fontSettings('Tangerine', 2em, regular, normal);
+}
+
+.plus--sign {
+    font-size: 1.5em;
+}
+
+.navbar--items {
+    @include flexContainer(row, space-between, center);
+    list-style: none;
+}
+
+.navbar--item {
+    @include flexContainer(row, center, center);
+    color: $text-color2;
+    font-weight: weight(bold);
+    gap: 3px;
+    text-decoration: none;
+}
+
+// CAROUSEL SECTION
+
+// Carousel's Title 
+.carousel--header {
+    @include flexContainer(row, center, center);
+    gap: 15px;
+    margin: 70px 0px 10px 60px;
+    
+    & h1 {
+        @include fontSettings('Lato', 1.5em, bold, normal);
+        background: -webkit-linear-gradient(120deg, $red, $black);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 2px;
+    }
+
+    & .carousel--options {
+        @include flexContainer(row, space-evenly, center);
+        @include fontSettings('Verdana', 1.2, bold, normal);
+        color: $background;
+        border: .5px solid $background;
+        border-radius: 25px;
+        background-color: transparent;
+        gap: 12px;
+        list-style: none;
+        padding: 2px 3px;
+        
+        & li {
+            cursor: pointer;
+            padding: 2px 7px;
+        }
+        
+        & .selected {
+            text-shadow: $text-color2 1px 0 10px;
+            border-radius: 25px;
+            color: $text-color2;
+            background-color: $background;
+            padding: 2px 7px;
+        }
+    }
+}
+
+.carousel--container {
+    @include flexContainer(column, space-between, start);
+    @include responsiveContainer();
+    padding: 20px 0px;
+    width: max-content;
+}
+
+.carousel--content {
+    @include flexContainer(row, none, center);
+    max-width: 1400px;
+    overflow-x: scroll;
+    box-shadow: 0px 0px 18px $black;
+}
+
+.list--content {
+    @include flexContainer (row, space-between, center);
+    list-style: none;
+    gap: 12px;
+    padding: 40px 60px;
+    &--main {
+        background-color: $background-carousel;
+    }
+
+    &--secondary {
+        background-color: $background-carousel2;
+    }
+}
+
+.item--list {
+    @include flexContainer(column, space-between, center);
+    max-width: 320px;
+    gap: 15px;
+    padding: 10px 10px;
+    border-radius: 12px;
+    overflow-x: auto;
+
+    #{&}--title {
+        @include fontSettings('Lato', 1em, bold, normal);
+    }
+}
+
+// Poster image 
+.image--container {
+    padding: 7px;
+    border-radius: 3%;
+    
+    &--high {
+        background: linear-gradient(180deg, #FAFAFA -32%, $high-score 88%);
+    }   
+
+    &--medium {
+        background: linear-gradient(180deg, #FAFAFA -32%, $medium-score 88%);
+    }
+
+    &--low {
+        background: linear-gradient(180deg, #FAFAFA -32%, $low-score 88%);
+    }
+}
+
+.movie--card {
+    position: relative;
+}
+
+.item--list--image {
+    width: 160px;
+    border-radius: 3px;
+    box-shadow: 3px 6px 7px $black;
+}
+
+.item--list--description {
+    @include flexContainer(column, center, center);
+    max-width: 150px;
+    text-align: center;
+    height: 80px;
+    color: $text-color2;
+
+    &--secondary {
+        color: $black;
+    }
+}
+
+// Custom Progress bar 
+.progress--bar {
+    max-width: 100px;
+    padding: 10px 7px;
+    border-radius: 50%;
+    border-style: solid;
+    background-color: $background-score;
+    color: $text-color2;
+    border-width: 3px;
+    position: absolute;
+    bottom: 90px;
+    left: 10px;
+    box-shadow: 3px 6px 7px $black;
+
+    &--high {
+        border-color: $high-score;
+    }
+
+    &--medium {
+        border-color: $medium-score;
+    }
+
+    &--low {
+        border-color: $low-score;
+    }
+}
+
+.progress--bar--average {
+    @include flexContainer(row, center, center);
+    @include fontSettings('Orbitron', .9em, medium, normal);
+    width: 27px;
+    max-width: 27px;
+}
+
+.percent--sign {
+    font-size: .8em;
+}
