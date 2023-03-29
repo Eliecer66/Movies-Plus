@@ -1,0 +1,46 @@
+// NAVIGATION BAR SECTION
+.navbar {
+    background: linear-gradient(90deg, $black 0%, $background 25%);
+    box-shadow: 0px 4px 9px $black;
+    color: $text-color;
+    padding: 7px 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar--container {
+    @include flexContainer(row, space-between, center);
+    @include responsiveContainer();
+}
+
+.navbar--header {
+    @include fontSettings('Cinzel', 1.2em, bold, italic);
+    @include flexContainer(row, center, center);
+    color: $text-color2;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: $silver 1px 0 10px;
+}
+
+.letter--style {
+    @include fontSettings('Tangerine', 2em, regular, normal);
+}
+
+.plus--sign {
+    font-size: 1.5em;
+}
+
+.navbar--items {
+    @include flexContainer(row, space-between, center);
+    list-style: none;
+}
+
+.navbar--item {
+    @include flexContainer(row, center, center);
+    color: $text-color2;
+    font-weight: weight(bold);
+    gap: 3px;
+    text-decoration: none;
+}

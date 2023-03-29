@@ -6,9 +6,10 @@ export default function HeaderCarousel({setSwitchRoute, switchRoute, title}) {
     const switchState = (name) => { 
         setSwitchRoute((prevItem) => {
             const elements = prevItem.map((element) => {
-                return name != element.name ? 
-                {...element, isSelected: false} : 
-                {...element, isSelected: true};
+                if (name !== element.name) {
+                    return {...element, isSelected: false};
+                }
+                return {...element, isSelected: true};
             })
             return elements;
         });
@@ -20,7 +21,7 @@ export default function HeaderCarousel({setSwitchRoute, switchRoute, title}) {
                 <li 
                     key={nanoid()}
                     onClick={() => switchState(item.name)}
-                    className={item.isSelected === true ? 'selected': ''}
+                    className={item.isSelected ? 'selected': ''}
                     > {item.name}
                 </li>
             )

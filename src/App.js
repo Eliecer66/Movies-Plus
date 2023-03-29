@@ -3,8 +3,7 @@ import { render } from 'react-dom';
 import Navbar from './components/Navbar';
 import Carousel from './components/Carousel';
 import './styles/globals.scss';
-const API_KEY =  require('./utils');
-const DATABASE_PATH = 'https://api.themoviedb.org/3/trending/movie/week?api_key=';
+import apiKey from './utils/apiKey';
 
 const rootElement = document.getElementById('root');
 
@@ -16,20 +15,20 @@ const App = () => (
       category='trending'
       mediaType='movie'
       background='main'
-      apiKey={API_KEY}
+      apiKey={apiKey}
     /> 
     <Carousel
       title='Trending Series'
       category='trending' 
       mediaType='tv'
       background='secondary'
-      apiKey={API_KEY}
+      apiKey={apiKey}
     />
     <Carousel
       title='Popular'
       category='popular'
       background='main'
-      apiKey={API_KEY}
+      apiKey={apiKey}
     /> 
   </div>
 );

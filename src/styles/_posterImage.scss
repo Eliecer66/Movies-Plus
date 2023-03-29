@@ -1,0 +1,40 @@
+
+// Poster image 
+.image--container {
+    padding: 7px;
+    border-radius: 3%;
+    
+    &--high {
+        background: linear-gradient(180deg, #FAFAFA -32%, $high-score 88%);
+    }   
+
+    &--medium {
+        background: linear-gradient(180deg, #FAFAFA -32%, $medium-score 88%);
+    }
+
+    &--low {
+        background: linear-gradient(180deg, #FAFAFA -32%, $low-score 88%);
+    }
+}
+
+.movie--card {
+    position: relative;
+}
+
+.item--list--image {
+    width: 160px;
+    border-radius: 3px;
+    box-shadow: 3px 6px 7px $black;
+}
+
+.item--list--description {
+    @include flexContainer(column, center, center);
+    max-width: 150px;
+    text-align: center;
+    height: 80px;
+    color: $text-color2;
+
+    &--secondary {
+        color: $black;
+    }
+}
