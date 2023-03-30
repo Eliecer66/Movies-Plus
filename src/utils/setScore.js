@@ -7,18 +7,14 @@ const SCORE_PARAMETERS = {
 }
 
 const setScore = (average) => {
-    const goodRate = average > SCORE_PARAMETERS.GOOD;
-    const regularRate = average > SCORE_PARAMETERS.REGULAR && average <= SCORE_PARAMETERS.GOOD;
-    let rate = SCORE_PARAMETERS.LOW;
+    const isGoodRate = average > SCORE_PARAMETERS.GOOD;
+    const isRegularRate = average > SCORE_PARAMETERS.REGULAR && average <= SCORE_PARAMETERS.GOOD;
 
-    if (goodRate) {
-        rate = SCORE_PARAMETERS.HIGH;
-    } 
+    if (isGoodRate) return SCORE_PARAMETERS.HIGH;
     
-    if (regularRate) {
-        rate = SCORE_PARAMETERS.MEDIUM;
-    }
-    return rate;
+    if (isRegularRate) return SCORE_PARAMETERS.MEDIUM;
+
+    return SCORE_PARAMETERS.LOW;
 };
 
-module.exports = setScore;
+export default setScore;

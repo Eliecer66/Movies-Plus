@@ -1,9 +1,8 @@
-import React,{ useEffect, useState } from 'react';
+import React,{ useState } from 'react';
 import HeaderCarousel from './HeaderCarousel';
 import MoviesCarousel from './MoviesCarousel';
-const API_PATH = 'https://api.themoviedb.org/3/';
+import apiUrls from '../utils/apiUrls';
 import useFetch from '../utils/useFetch';
-
 
 export default function Carousel({title, category, mediaType, background, apiKey}) {
     // The media categories that can be found depending on the category of it.
@@ -11,24 +10,24 @@ export default function Carousel({title, category, mediaType, background, apiKey
         trending: [
             {
                 name: 'Today', 
-                path: `${API_PATH}trending/${mediaType}/day?api_key=${apiKey}`,
+                path: `${apiUrls.domainName}trending/${mediaType}/day?api_key=${apiKey}`,
                 isSelected: true
             },
             {
                 name: 'This Week',
-                path: `${API_PATH}trending/${mediaType}/week?api_key=${apiKey}`,
+                path: `${apiUrls.domainName}trending/${mediaType}/week?api_key=${apiKey}`,
                 isSelected: false
             }
         ],
         popular: [
             {
                 name: 'Movies', 
-                path: `${API_PATH}movie/popular?api_key=${apiKey}`,
+                path: `${apiUrls.domainName}movie/popular?api_key=${apiKey}`,
                 isSelected: true
             },
             {
                 name: 'Series',
-                path: `${API_PATH}tv/popular?api_key=${apiKey}`,
+                path: `${apiUrls.domainName}tv/popular?api_key=${apiKey}`,
                 isSelected: false
             }
         ]
