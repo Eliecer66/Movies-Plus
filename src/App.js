@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Navbar from './components/Navbar';
-import Carousel from './components/Carousel';
+import Carousel from './components/home_page/Carousel';
 import './styles/globals.scss';
-import apiUrls from './utils/apiUrls';
+import { apiKey } from './utils/apiUrls';
 
 const rootElement = document.getElementById('root');
 
@@ -15,20 +15,20 @@ const App = () => (
       category='trending'
       mediaType='movie'
       background='main'
-      apiKey={apiUrls.apiKey}
+      apiKey={apiKey}
     /> 
     <Carousel
       title='Trending Series'
       category='trending' 
       mediaType='tv'
       background='secondary'
-      apiKey={apiUrls.apiKey}
+      apiKey={apiKey}
     />
     <Carousel
       title='Popular'
       category='popular'
       background='main'
-      apiKey={apiUrls.apiKey}
+      apiKey={apiKey}
     /> 
   </div>
 );

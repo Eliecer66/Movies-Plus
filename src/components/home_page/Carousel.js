@@ -1,8 +1,8 @@
 import React,{ useState } from 'react';
 import HeaderCarousel from './HeaderCarousel';
 import MoviesCarousel from './MoviesCarousel';
-import apiUrls from '../utils/apiUrls';
-import useFetch from '../utils/useFetch';
+import { domainName } from '../../utils/apiUrls';
+import useFetch from '../../utils/custom_hooks/useFetch';
 
 export default function Carousel({title, category, mediaType, background, apiKey}) {
     // The media categories that can be found depending on the category of it.
@@ -10,24 +10,24 @@ export default function Carousel({title, category, mediaType, background, apiKey
         trending: [
             {
                 name: 'Today', 
-                path: `${apiUrls.domainName}trending/${mediaType}/day?api_key=${apiKey}`,
+                path: `${domainName}trending/${mediaType}/day?api_key=${apiKey}`,
                 isSelected: true
             },
             {
                 name: 'This Week',
-                path: `${apiUrls.domainName}trending/${mediaType}/week?api_key=${apiKey}`,
+                path: `${domainName}trending/${mediaType}/week?api_key=${apiKey}`,
                 isSelected: false
             }
         ],
         popular: [
             {
                 name: 'Movies', 
-                path: `${apiUrls.domainName}movie/popular?api_key=${apiKey}`,
+                path: `${domainName}movie/popular?api_key=${apiKey}`,
                 isSelected: true
             },
             {
                 name: 'Series',
-                path: `${apiUrls.domainName}tv/popular?api_key=${apiKey}`,
+                path: `${domainName}tv/popular?api_key=${apiKey}`,
                 isSelected: false
             }
         ]
@@ -50,6 +50,6 @@ export default function Carousel({title, category, mediaType, background, apiKey
                 data={data}
                 background={background}
             />
-        </div>  
+        </div>
     );
 }

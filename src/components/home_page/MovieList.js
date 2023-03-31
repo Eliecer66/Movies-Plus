@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard';
-import setScore from '../utils/setScore';
+import setScore from '../../utils/setScore';
 
 export default function MovieList({data, background}) {
     const movieList = () => {

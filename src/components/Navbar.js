@@ -5,7 +5,7 @@ export default function Navbar() {
             <div className='navbar--container'>
                 <h1 className='navbar--header'>
                     <span className='letter--style'>M</span>
-                        ovies 
+                        ovies
                     <span className='plus--sign'>+</span>
                 </h1>
                 <ul className='navbar--items'>
