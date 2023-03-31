@@ -1,0 +1,41 @@
+// CAROUSEL CONTENT
+.carousel--container {
+    @include flexContainer(column, space-between, start);
+    @include responsiveContainer();
+    padding: 20px 0px;
+    width: max-content;
+}
+
+.carousel--content {
+    @include flexContainer(row, none, center);
+    max-width: 1400px;
+    overflow-x: scroll;
+    box-shadow: 0px 0px 18px $black;
+}
+
+.list--content {
+    @include flexContainer (row, space-between, center);
+    list-style: none;
+    gap: 12px;
+    padding: 40px 60px;
+    &--main {
+        background-color: $background-carousel;
+    }
+
+    &--secondary {
+        background-color: $background-carousel2;
+    }
+}
+
+.item--list {
+    @include flexContainer(column, space-between, center);
+    max-width: 320px;
+    gap: 15px;
+    padding: 10px 10px;
+    border-radius: 12px;
+    overflow-x: auto;
+
+    #{&}--title {
+        @include fontSettings('Lato', 1em, bold, normal);
+    }
+}

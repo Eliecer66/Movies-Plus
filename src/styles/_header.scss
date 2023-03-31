@@ -1,0 +1,39 @@
+// Carousel's HEADER 
+.carousel--header {
+    @include flexContainer(row, center, center);
+    gap: 15px;
+    margin: 70px 0px 10px 60px;
+    
+    & h1 {
+        @include fontSettings('Lato', 1.5em, bold, normal);
+        background: -webkit-linear-gradient(120deg, $red, $black);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 2px;
+    }
+
+    & .carousel--options {
+        @include flexContainer(row, space-evenly, center);
+        @include fontSettings('Verdana', 1.2, bold, normal);
+        color: $background;
+        border: .5px solid $background;
+        border-radius: 25px;
+        background-color: transparent;
+        gap: 12px;
+        list-style: none;
+        padding: 2px 3px;
+        
+        & li {
+            cursor: pointer;
+            padding: 2px 7px;
+        }
+        
+        & .selected {
+            text-shadow: $text-color2 1px 0 10px;
+            border-radius: 25px;
+            color: $text-color2;
+            background-color: $background;
+            padding: 2px 7px;
+        }
+    }
+}
