@@ -2,7 +2,6 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 
 export default function HeaderCarousel({setSwitchRoute, switchRoute, title}) {
-
     const switchState = (name) => { 
         setSwitchRoute((prevItem) => {
             const elements = prevItem.map((element) => {

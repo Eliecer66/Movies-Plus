@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from './MovieCard';
 import setScore from '../../utils/setScore';
 
-export default function MovieList({data, background}) {
+export default function MovieList({data, background, mediaType}) {
     const movieList = () => {
         return data.results.map((item) => {
             const average = Math.round(item.vote_average * 10);
@@ -12,11 +12,13 @@ export default function MovieList({data, background}) {
                 releaseDate: item.release_date || item.first_air_date,
                 average,
                 posterPath: item.poster_path || item.backdrop_path,
+                mediaType: mediaType,
                 score: setScore(average)
             }
 
             return (
-                <MovieCard 
+                <MovieCard
+                    key={movieData.id}
                     movieData={movieData}
                     background={background}
                 />

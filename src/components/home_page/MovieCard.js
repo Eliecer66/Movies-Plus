@@ -4,16 +4,18 @@ import ProgressBar from './ProgressBar';
 import DescriptionMovie from './DescriptionMovie';
 
 export default function MovieCard({movieData, background}) {
-    const {id, title, releaseDate, average, posterPath, score} = movieData;
+    const {id, title, releaseDate, average, posterPath, score, mediaType} = movieData;
     return (
         <div className='movie--card'>
             <li 
-                key={id} 
+                key={id}
                 className='item--list'
             >
                 <PosterMovie
                     score={score}
                     posterPath={posterPath}
+                    id={id}
+                    mediaType={mediaType}
                 />
                 <ProgressBar 
                     score={score}

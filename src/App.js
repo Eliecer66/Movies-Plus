@@ -1,36 +1,33 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Navbar from './components/Navbar';
-import Carousel from './components/home_page/Carousel';
 import './styles/globals.scss';
-import { apiKey } from './utils/apiUrls';
+import HomePage from './components/HomePage';
+import WatchList from './components/WatchList';
+import Media from './components/Media';
+
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+ } from 'react-router-dom';
 
 const rootElement = document.getElementById('root');
 
 const App = () => (
-  <div>
-    <Navbar />
-    <Carousel
-      title='Trending Movies'
-      category='trending'
-      mediaType='movie'
-      background='main'
-      apiKey={apiKey}
-    /> 
-    <Carousel
-      title='Trending Series'
-      category='trending' 
-      mediaType='tv'
-      background='secondary'
-      apiKey={apiKey}
-    />
-    <Carousel
-      title='Popular'
-      category='popular'
-      background='main'
-      apiKey={apiKey}
-    /> 
-  </div>
+  <Router>
+    <div>
+      <Navbar />
+      <div>
+        <Routes>
+          <Route path='/' element={<HomePage />}></Route>
+          <Route exact path='/watchlist' element={<WatchList />}></Route>
+          <Route exact path={`/media`} element={<Media />}></Route>
+        </Routes>
+      </div>
+    </div>
+  </Router>
 );
 
 render(<App />, rootElement);
