@@ -25,6 +25,16 @@
     }
 }
 
+.progress--bar--position {
+    position: initial;
+    max-width: 58px;
+    box-shadow: none;
+    font-size: 1.4em;
+    display: flex;
+    justify-content: center;
+    padding: 13px 13px;
+}
+
 .progress--bar--average {
     @include flexContainer(row, center, center);
     @include fontSettings('Orbitron', .9em, medium, normal);

@@ -1,0 +1,169 @@
+:root {
+    --background-image: transparent;
+    --background-overlay: transparent;
+}
+
+.media--container {
+   margin-top: 100px;
+}
+
+.overview--container {
+    background: var(--background-image);
+    background-repeat: no-repeat;
+    background-size: 87% 100%;
+    background-position: right;
+}
+
+.overlay--bg {
+    background-image: var(--background-overlay);
+    @include flexContainer(row, start, start);
+    padding: 30px 30px;
+    gap: 45px;
+}
+
+.poster--container {
+    @include flexContainer(column, center, none);
+}
+
+.poster--media {
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 20px 41px #000;
+}
+
+.effect--front {
+    border: none;
+    margin: 0 auto;
+}
+
+.effect--front:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+
+.container--provider {
+    @include flexContainer(row, center, center);
+    gap: 12px;
+    background-color: $background;
+    color: $text-color2;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+
+    & a {
+        text-decoration: none;
+        color: $text-color2;
+        font-weight: 600;
+    }
+
+    & .provider--logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    & .redirecting--link {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.information--container {
+    @include flexContainer(column,start, start);
+    margin-top: 20px;
+    gap: 12px;
+    color: $text-color2;
+    & .information--title h1 {
+        @include fontSettings('Lato', 2.3em, bold, normal);
+    }
+
+    & .date-genres--info {
+        @include flexContainer(row,center,center);
+        gap: 30px;
+        margin-left: -36px;
+
+        & .date--list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        & li, p {
+            @include fontSettings('Lato', 1.2em, normal, normal);
+        }
+    }
+
+    & .auto--actions {
+        list-style: none;
+        margin-left: -35px;
+        @include flexContainer(row, center, center);
+        gap: 50px;
+        margin-top: 50px;
+        margin-bottom: 12px;
+        & .progress--bar--detail {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        & p {
+            max-width: 50px;
+            font-weight: 600;
+        }
+
+        & a {
+            color: $text-color2;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            @include flexContainer(row, center, center);
+            gap: 7px;
+        }
+        & a:hover {
+            transition: all 1s;
+            color: rgba(235, 235, 235, 0.568);
+        }
+
+        & .material-symbols-outlined {
+            font-size: 30px;
+        }
+    }
+    & .add--watch--list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
+
+    & .add--watch--list:hover {
+        transition: all 1s;
+        color: rgba(235, 235, 235, 0.568);
+    }
+
+    & .tag--line {
+        font-style: italic;
+        font-size: 1.2em;
+        font-weight: 100;
+    }
+
+    & .overview {
+        @include flexContainer(column, center, start);
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 10px;
+        margin-top: 25px;
+
+        & h2 {
+            font-size: 1.3em;
+        }
+
+        & p {
+            font-size: 1.2em;
+        }
+    }
+}
